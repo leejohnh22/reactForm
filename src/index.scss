@@ -1,0 +1,58 @@
+@import "~bootstrap/scss/bootstrap";
+
+// FONTS
+@mixin set-font( $family: 'Helvetica Neue', $weight: 400, $style: normal) {
+	font-family: $family, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fire Sans', 'Droid Sans', 'sans-serif';
+	font-style: $style;
+	font-weight: $weight;
+}
+
+@mixin code-font( $family: 'source-code-pro', $weight: 350, $style: normal) {
+	font-family: $family, Menlo, Monaco, Consolas, 'Courier New', monospace;
+	font-style: $style;
+	font-weight: $weight;
+}
+
+// COLORS
+$darkGrey: #505050;
+$navColor: #5a6268;
+$lightGrey: #dddddd;
+$white: #ffffff;
+
+// STYLE
+$rounded: 25px;
+
+body {
+	margin: 0;
+	@include set-font;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background-color: $lightGrey;
+}
+
+code {
+	@include code-font;
+}
+
+#banner {
+	width: 100%;
+	height: 200px;
+	background-image: url('./images/banner-bg.jpg');
+	background-position: center;
+	background-size: cover;	
+}
+
+#navigation {
+	width: 100%;
+	height: 40px;
+	background-color: $navColor;
+}
+
+.form {
+	min-width: 350px;
+	width: 33.33%;
+	margin: 5% 33.33% 5% 33.33%;
+	padding: 2.5% 5% 5% 5%;
+	border-radius: $rounded;
+	background-color: $white;
+}

@@ -1,19 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
-import Button from 'react-bootstrap/Button';
-import ButtonGroup from 'react-bootstrap/ButtonGroup';
 
-function NavMenu() {
-	return (
-		<>
-		<ButtonGroup aria-label="nav buttons">
-			<Button variant="secondary">Home</Button>
-			<Button variant="secondary">GitHub</Button>
-			<Button variant="secondary">Contact</Button>
-		</ButtonGroup>
-		</>
-	)
+class MyNav extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			homelabel: 'Home',
+			githublabel: 'Git Hub',
+			contactlabel: 'Contact Me'
+		};
+	}
+	render() {
+		return (
+			<>
+//				<Button variant="light">this.state.homelabel</Button>
+//				<Button variant="light">this.state.githublabel</Button>
+//				<Button variant="light">this.state.contactlabel</Button>
+			</>
+		)
+	}
 }
 
 class MyForm extends React.Component {
@@ -52,6 +58,11 @@ class MyForm extends React.Component {
 	}
 	render() {
 		let header = <h1>Contact Us</h1>;
+	//	if (this.state.username) {
+	//		header = <h1>Hello {this.state.username} {this.state.age} {this.state.citizenship}</h1>;
+	//	} else {
+	//		header = '';
+	//	}
 		return (
 			<form onSubmit={this.mySubmitHandler}>
 			{header}
@@ -72,4 +83,4 @@ class MyForm extends React.Component {
 }
 
 ReactDOM.render(<MyForm />, document.getElementById('root'));
-ReactDOM.render(<NavMenu />, document.getElementById('navigation'));
+ReactDOM.render(<MyNav />, document.getElementById('navigation'));
